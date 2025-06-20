@@ -1,17 +1,19 @@
 import CreatorDetails from '@/components/creator/CreatorDetails';
-import { getAllUsernames } from '@/lib/data';
+import { fetchCreators } from '@/lib/data';
 
+interface Params {
+  username: string;
+}
 interface CreatorPageProps {
-  params: {
-    username: string;
-  };
+  params: Promise<Params>;
 }
 
-export default function CreatorPage({ params }: CreatorPageProps) {
-  return <CreatorDetails username={params.username} />;
+export default async function CreatorPage({ params }: CreatorPageProps) {
+  const { username } = await params;
+  return <CreatorDetails username={username} />;
 }
 
 export async function generateStaticParams() {
-  const usernames = getAllUsernames();
-  return usernames.map((username) => ({ username }));
+  const creators = await fetchCreators();
+  return creators.map((creator) => ({ username: creator.username }));
 }

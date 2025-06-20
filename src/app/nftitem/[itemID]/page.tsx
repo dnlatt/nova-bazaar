@@ -1,17 +1,19 @@
 import NftDetailsPage from '@/components/item/NftDetailsPage';
-import { getAllItemIds } from '@/lib/data';
+import { fetchItems } from '@/lib/data';
 
+interface Params {
+  itemID: string;
+}
 interface NftPageProps {
-  params: {
-    itemId: string;
-  };
+  params: Promise<Params>;
 }
 
-export default function NftPage({ params }: NftPageProps) {
-  return <NftDetailsPage itemID={params.itemId} />;
+export default async function NftPage({ params }: NftPageProps) {
+  const { itemID } = await params;
+  return <NftDetailsPage itemID={itemID} />;
 }
 
 export async function generateStaticParams() {
-  const itemIds = getAllItemIds();
-  return itemIds.map((itemId) => ({ itemId }));
+  const items = await fetchItems();
+  return items.map((item) => ({ itemID: item.itemId }));
 }
