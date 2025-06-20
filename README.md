@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🖼️ Nova Bazaar – NFT Collection Portfolio
 
-## Getting Started
+**Nova Bazaar** is a stylish, responsive single-page portfolio site built for **personal portfolio showcase**. It highlights curated NFT collections, digital artists, and their creations in an elegant, searchable layout. Developed using **Next.js**, **TailwindCSS**, **Framer Motion**, and **AOS (Animate On Scroll)**, the site offers a smooth and engaging browsing experience with modern animations and scroll-triggered effects.
 
-First, run the development server:
+> 🌐 **Live Demo:** [https://nova-bazaar-nft.web.app/](https://nova-bazaar-nft.web.app/)  
+
+---
+
+## 🔧 Tech Stack
+
+- ⚙️ **Next.js** – React-based framework for static site generation and routing  
+- 🎨 **TailwindCSS** – Utility-first CSS for clean and responsive UI  
+- 🎞️ **Framer Motion** – For smooth animations and transitions  
+- 🌀 **AOS (Animate On Scroll)** – Scroll-triggered animations to enhance user engagement  
+
+---
+
+## 🎨 Features
+
+- 👤 **Artist & NFT Showcase**  
+  Display artists and their NFT creations with beautiful layouts.
+
+- 🔍 **Search & Category Filters**  
+  Easily find NFTs using category-based filtering and keyword search.
+
+- 🖼️ **Detailed NFT Views**  
+  Explore each NFT's details including creator information and design.
+
+- 🧭 **AOS Scroll Animations**  
+  Eye-catching animations triggered as users scroll through the page.
+
+- 📱 **Fully Responsive Design**  
+  Optimized for seamless viewing across all screen sizes.
+
+---
+
+## 📸 Screenshots
+
+![image](https://github.com/user-attachments/assets/2da93616-2b93-42c3-993e-d8e2652b84a7)
+
+
+---
+
+## 📦 Deployment
+
+- **Hosting:** Firebase Hosting  
+- **CI/CD:** GitHub Actions – automatically deploys on push to `master`
+
+---
+
+## 🚀 Getting Started
 
 ```bash
+# Clone the repository
+git clone https://github.com/dnlatt/nova-bazaar.git
+cd nova-bazaar
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
