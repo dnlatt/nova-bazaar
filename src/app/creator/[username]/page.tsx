@@ -1,11 +1,17 @@
-'use client';
-
-import { useParams } from 'next/navigation';
 import CreatorDetails from '@/components/creator/CreatorDetails';
+import { getAllUsernames } from '@/lib/data';
 
-export default function CreatorPage() {
-  const params = useParams(); // 👈 works in client components only
-  const username = params?.username as string;
+interface CreatorPageProps {
+  params: {
+    username: string;
+  };
+}
 
-  return <CreatorDetails username={username} />;
+export default function CreatorPage({ params }: CreatorPageProps) {
+  return <CreatorDetails username={params.username} />;
+}
+
+export async function generateStaticParams() {
+  const usernames = getAllUsernames();
+  return usernames.map((username) => ({ username }));
 }

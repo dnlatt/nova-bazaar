@@ -1,11 +1,17 @@
-'use client';
-
-import { useParams } from 'next/navigation';
 import NftDetailsPage from '@/components/item/NftDetailsPage';
+import { getAllItemIds } from '@/lib/data';
 
-export default function Page() {
-  const params = useParams(); // { itemID: 'some-id' }
-  const itemID = params?.itemID as string;
+interface NftPageProps {
+  params: {
+    itemId: string;
+  };
+}
 
-  return <NftDetailsPage itemID={itemID} />;
+export default function NftPage({ params }: NftPageProps) {
+  return <NftDetailsPage itemID={params.itemId} />;
+}
+
+export async function generateStaticParams() {
+  const itemIds = getAllItemIds();
+  return itemIds.map((itemId) => ({ itemId }));
 }
